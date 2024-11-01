@@ -1,0 +1,463 @@
+@keyframes wpc-spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes wpc-spinner {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes wooco-spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes wooco-spinner {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+#wooco_regular_price {
+    min-width: 60px;
+    display: inline-block;
+}
+
+.wooco_components {
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #eeeeee;
+    position: relative;
+}
+
+.wooco_components.wooco_components_loading:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    margin-left: -15px;
+    border-width: 4px;
+    border-style: solid;
+    border-radius: 100%;
+    border-top-color: rgba(0, 0, 0, .5);
+    border-left-color: rgba(0, 0, 0, .1);
+    border-bottom-color: rgba(0, 0, 0, .1);
+    border-right-color: rgba(0, 0, 0, .1);
+    animation: wooco-spinner 1s linear infinite;
+    -webkit-animation: wooco-spinner 1s linear infinite;
+}
+
+.wooco_components.wooco_components_loading:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .5);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    pointer-events: none;
+}
+
+.wooco_components * {
+    box-sizing: border-box;
+}
+
+.wooco_components .wooco_component {
+
+}
+
+.wooco_components .wooco_component td {
+    padding: 0 0 10px 0;
+}
+
+.wooco_components .wooco_component .wooco_component_inner {
+    width: 100%;
+    min-width: 300px;
+    background-color: #fff;
+    border: 1px solid #eee;
+}
+
+.wooco_component_heading {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 35px 0 0;
+    cursor: pointer;
+    border: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.wooco_move_component {
+    cursor: move;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    text-align: center;
+}
+
+.wooco_move_component:before {
+    content: "\f545";
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font: normal 12px/40px dashicons;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: none !important;
+}
+
+.wooco_component_heading .wooco_component_name {
+    font-weight: 700;
+    color: #333;
+    flex-grow: 1;
+}
+
+.wooco_component_heading .wooco_duplicate_component, .wooco_component_heading .wooco_remove_component {
+    padding: 0 5px;
+    opacity: 0;
+    visibility: hidden;
+    outline: none;
+    box-shadow: none;
+}
+
+.wooco_component_heading .wooco_remove_component {
+    color: #ff4f3b;
+}
+
+.wooco_component_inner:hover .wooco_component_heading .wooco_duplicate_component, .wooco_component_inner:hover .wooco_component_heading .wooco_remove_component {
+    opacity: 1;
+    visibility: visible;
+}
+
+.wooco_component_inner .wooco_component_heading:after {
+    content: "\f140";
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font: normal 16px/40px dashicons;
+    position: absolute;
+    top: 0;
+    right: 0;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: none !important;
+}
+
+.wooco_component_inner.active .wooco_component_heading:after {
+    content: "\f142";
+}
+
+.wooco_components .wooco_component td input[type="text"] {
+    display: block;
+    width: 100%;
+}
+
+.wooco_components .wooco_component td input[type="number"] {
+    width: auto;
+    max-width: 60px;
+}
+
+.wooco_components .wooco_component td select {
+    min-width: 60px;
+}
+
+.wooco_components .wooco_component .select2-container {
+    width: 100% !important;
+}
+
+.wooco_products[data-allow_clear="false"] + .select2 .select2-selection__clear {
+    display: none !important;
+}
+
+.wooco_components tfoot tr td {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wooco_components tfoot tr td > div {
+    display: flex;
+    align-items: center;
+    margin-left: -5px !important;
+    margin-right: -5px !important;
+}
+
+.wooco_components tfoot tr td a {
+    margin: 0 5px !important;
+}
+
+.wooco_disabled {
+    opacity: .5;
+    cursor: not-allowed;
+    pointer-events: none;
+    filter: grayscale(100%);
+}
+
+.wooco_component_content {
+    padding: 10px;
+    display: none;
+    border-top: 1px solid #eee;
+}
+
+.wooco_component_inner.active .wooco_component_content {
+    display: block;
+}
+
+.wooco_component_content_line {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.wooco_component_content .wooco_component_content_line:first-child {
+    margin-top: 0;
+}
+
+.wooco_component_content_line .wooco_component_content_line_label {
+    width: 140px;
+    flex: 0 0 140px;
+    padding-right: 10px;
+}
+
+.wooco_component_content_line .wooco_component_content_line_value {
+    flex-grow: 1;
+}
+
+.wooco_hide {
+    display: none;
+}
+
+#wooco_settings input[type="search"], #wooco_settings input[type="text"], #wooco_settings input[type="number"] {
+    font-size: 13px;
+    height: 28px;
+    line-height: 1;
+    float: none;
+}
+
+#wooco_settings label {
+    float: none;
+    width: auto;
+    margin: 0;
+}
+
+#wooco_settings .w100 {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+#wooco_settings .w100 input {
+    width: 100%;
+}
+
+#wooco_settings textarea {
+    width: 100%;
+    font-size: 13px !important;
+}
+
+#wooco_settings .loading {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    z-index: 998;
+}
+
+#wooco_settings select {
+    font-size: 13px;
+    float: none;
+}
+
+.wooco_table table {
+    width: 100%;
+    padding: 10px;
+    border-spacing: 0;
+    border-collapse: separate;
+    table-layout: fixed;
+}
+
+.wooco_table .woocommerce-help-tip {
+    margin: 0 !important;
+    font-size: 16px;
+}
+
+.wooco_table table tr.wooco_tr_space th, .wooco_table table tr.wooco_tr_space td {
+    padding-top: 15px;
+}
+
+.wooco_table table tr th {
+    font-size: 12px;
+    font-weight: 400;
+    text-align: start;
+    width: 150px;
+}
+
+.wooco_table table tr td {
+    text-align: start;
+}
+
+#wooco_set_regular_price, #wooco_set_sale_price, #wooco_set_shipping_class {
+    cursor: pointer;
+}
+
+.wooco-parent .woocommerce-help-tip, .wooco-child .woocommerce-help-tip {
+    display: none !important;
+}
+
+.wooco_show_if_products, .wooco_show_if_categories {
+    margin-top: 10px;
+    width: 100%;
+    position: relative;
+}
+
+.wooco-state {
+    font-weight: normal;
+    font-style: italic;
+}
+
+.wooco_option_none_image_custom {
+    margin-top: 5px;
+}
+
+.wooco_option_none_image_preview img {
+    height: 30px;
+    width: auto;
+    border-radius: 3px;
+}
+
+.wpc-premium, .wpc-premium a, .active[data-slug="wpc-composite-products"] .premium a {
+    color: #c9356e;
+}
+
+.wooco-dialog-btn {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.wooco-dialog-btn:before {
+    font-family: Dashicons;
+    speak: never;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    text-indent: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    content: "\f223";
+}
+
+/* WPC Dialog */
+
+.ui-dialog.wpc-dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100102;
+    background-color: #fff;
+    border: 1px solid #dfdfdf;
+    border-radius: 0;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    color: #3c434a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 13px;
+    line-height: 1.4em;
+}
+
+.ui-dialog.wpc-dialog .ui-dialog-titlebar {
+    background: #fcfcfc;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #dfdfdf;
+    border-radius: 0;
+    height: 36px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 36px;
+    padding: 0 36px 0 16px
+}
+
+.ui-dialog.wpc-dialog .ui-dialog-titlebar .ui-dialog-title {
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ui-dialog.wpc-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close {
+    background: 0 0;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #666;
+    cursor: pointer;
+    display: block;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    outline: none;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.ui-dialog.wpc-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close:before {
+    font: 400 20px/1 dashicons;
+    vertical-align: top;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 36px;
+    width: 36px;
+    height: 36px;
+    content: '\f158';
+}
+
+.ui-dialog.wpc-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close:hover {
+    color: #00a0d2;
+}
+
+.ui-dialog.wpc-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close span {
+    display: none;
+}
+
+.ui-dialog.wpc-dialog .ui-dialog-content {
+    padding: 16px;
+    overflow: auto;
+}
